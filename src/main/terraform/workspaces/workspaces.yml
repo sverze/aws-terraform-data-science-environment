@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+    vpcId:
+      Type: String
+    subnetId1:
+      Type: String
+    subnetId2:
+      Type: String
+    directoryName:
+      Type: String
+    directoryPassword:
+      Type: String
+    workSpaceUserName:
+      Type: String
+      Default: "user1"
+Resources:
+  DataScienceDirectory:
+    Type: AWS::DirectoryService::SimpleAD
+    Properties:
+      Name:
+        Ref: "directoryName"
+      Password:
+        Ref: "directoryPassword"
+      Size: "Small"
+      VpcSettings:
+        SubnetIds:
+          - Ref: subnetId1
+          - Ref: subnetId2
+        VpcId:
+          Ref: vpcId
+# NOTE: Workspace integration with cloudformation is very poor, undoubtedly there
+#       is a way to do this with custome functions but for the purposes of this
+#       PoC we will revert to maual creation
+# DataScienceWorkspace:
+#   Type: "AWS::WorkSpaces::Workspace"
+#   Properties:
+#     BundleId: !FindInMap
+#       - WSTypeMap
+#       - !Ref 'workstationType'
+#       - BundleId
+#     DirectoryId:
+#       Ref: "DataScienceDirectory"
+#     UserName:
+#       Ref: "workSpaceUserName "
