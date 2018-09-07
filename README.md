@@ -56,11 +56,11 @@ but this is beyond the scope of this PoC
 2. Select Directories, there should be a directory created by terraform, select it and then actions and then update details
 3. Under the security groups section, select security group 2 e.g. _data_science_dev_sg_2_, then update and exist. We do this so that the work space created in the next steps get's access to the EMR cluster
 4. Select WorkSpaces and the Launch WorkSpaces, there are 5 steps to work through
-  1. Select the directory that was created
-  2. Create a user that will access the workspace, this can be anything, make sure you put in an email address that you are able to access. Login instructions will be sent to this address.
-  3. Select the bundle, note that the bundles on offer are the defaults that get registered in the directory, we can create our own bundle, for the purposes of this example select Performance Amazon Linux 2
-  4. Workspace configuration, defaults will do, if you feel like encrypting the volumes, go for your life, obviously it is the best practice to do this
-  5. Review and launch your workspace. This should take about 5 to 10 mins
+   1. Select the directory that was created
+   2. Create a user that will access the workspace, this can be anything, make sure you put in an email address that you are able to access. Login instructions will be sent to this address.
+   3. Select the bundle, note that the bundles on offer are the defaults that get registered in  the directory, we can create our own bundle, for the purposes of this example select Performance Amazon Linux 2
+   4. Workspace configuration, defaults will do, if you feel like encrypting the volumes, go for your life, obviously it is the best practice to do this
+   5. Review and launch your workspace. This should take about 5 to 10 mins
 5. Check you email, you should have received instructions on how to set-up your user credentials and the desktop application that effectively acts as your citrix host.
 6. Login to workspace using the workspaces application
 
