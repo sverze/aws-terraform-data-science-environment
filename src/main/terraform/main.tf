@@ -28,14 +28,14 @@ module "workspaces" {
 }
 
 # EMR cluster used for testing
-module "emr" {
-  source                        = "./emr"
-  environment_name              = "${var.environment_name}"
-  aws_region                    = "${var.aws_region}"
-  aws_profile                   = "${var.aws_profile}"
-  aws_service_security_group_id = "${module.aws_vpc.sg_1_id}"
-  aws_private_security_group_id = "${module.aws_vpc.sg_2_id}"
-  aws_vpc_id                    = "${module.aws_vpc.vpc_1_id}"
-  aws_subnet_id                 = "${module.aws_vpc.sn_1a_id}"
-  # aws_ami                       = "${lookup(var.aws_amis, var.aws_region)}"
-}
+#module "emr" {
+#  source                        = "./emr"
+#  environment_name              = "${var.environment_name}"
+#  aws_region                    = "${var.aws_region}"
+#  aws_profile                   = "${var.aws_profile}"
+#  aws_service_security_group_id = "${module.aws_vpc.sg_1_id}"
+#  aws_private_security_group_id = "${module.aws_vpc.sg_2_id}"
+#  aws_vpc_id                    = "${module.aws_vpc.vpc_1_id}"
+#  aws_subnet_id                 = "${module.aws_vpc.sn_1a_id}"
+#  aws_ami                       = "${lookup(var.aws_amis, var.aws_region)}"
+#}

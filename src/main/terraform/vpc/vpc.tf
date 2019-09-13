@@ -6,7 +6,7 @@ resource "aws_vpc" "vpc_1" {
   enable_dns_support           = true
   enable_dns_hostnames         = true
 
-  tags {
+  tags = {
     Name                       = "${var.environment_name}_vpc_1"
   }
 }
@@ -18,7 +18,7 @@ resource "aws_vpc" "vpc_1" {
 resource "aws_route_table" "rt_1" {
   vpc_id                       = "${aws_vpc.vpc_1.id}"
 
-  tags {
+  tags = {
     Name                       = "${var.environment_name}_rt_1"
   }
 }
@@ -33,7 +33,7 @@ resource "aws_subnet" "sn_1a" {
   availability_zone            = "${var.aws_region}a"
   map_public_ip_on_launch      = false
 
-  tags {
+  tags = {
     Name                       = "${var.environment_name}_sn_1a"
   }
 }
@@ -50,7 +50,7 @@ resource "aws_subnet" "sn_1b" {
   availability_zone            = "${var.aws_region}b"
   map_public_ip_on_launch      = false
 
-  tags {
+  tags = {
     Name                       = "${var.environment_name}_sn_1b"
   }
 }
@@ -83,7 +83,7 @@ resource "aws_security_group" "sg_1" {
     cidr_blocks                = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Name                       = "${var.environment_name}_sg_1"
   }
 }
@@ -117,7 +117,7 @@ resource "aws_security_group" "sg_2" {
     cidr_blocks                = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Name                       = "${var.environment_name}_sg_2"
   }
 }
